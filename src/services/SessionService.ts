@@ -15,7 +15,10 @@ class SessionService {
   async store({ user, password }: IsessionService) {
     user = user.toLowerCase();
 
+
+
     const usersRespository = getCustomRepository(UsersRepository);
+
 
     const userExists = await usersRespository.findOne({
       user
@@ -29,6 +32,7 @@ class SessionService {
       user,
       password: md5(password)
     });
+
 
     if (!verifyPassword) {
       throw new Error('password does not match');

@@ -1,4 +1,5 @@
 import app from "./app";
+import '../src/database';
 
 
 const port = 3333
