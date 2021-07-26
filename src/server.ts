@@ -1,9 +1,8 @@
-import { http } from "./http";
-import "./websocket/client";
+import app from "./app";
 
 
 const port = 3333
-http.listen(port, () => {
+app.listen(port, () => {
     console.log('server on port ' + port + '');
 })
 

@@ -1,9 +1,7 @@
 import express from "express";
 import { Express } from "express";
-import { settingsRouter } from "./routes/settingsRoutes";
 import morgan from 'morgan';
 import { usersRouter } from "./routes/usersRoutes";
-import { messagesRouter } from "./routes/messagesRoutes";
 import { createServer } from 'http';
 import { Server, Socket } from 'socket.io';
 import path from 'path';
@@ -31,9 +29,7 @@ class App {
   }
 
   routes() {
-    this.app.use("/api/v1/settings/", settingsRouter);
     this.app.use("/api/v1/users/", usersRouter);
-    this.app.use("/api/v1/messages/", messagesRouter);
     this.app.use("/api/v1/login/", sessionRouter);
 
   }

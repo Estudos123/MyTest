@@ -13,8 +13,4 @@ const http = createServer(app);
 const io = new Server(http);
 
 
-io.on("connection",(socket: Socket) => {
-    console.log("SE CONECTOU, ", socket.id)
-});
-
 export { http, io};
